@@ -20,22 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
 
-    // 1. نعمل الكونترولر
-    _controller = AnimationController(
-      duration: Duration(seconds: 2), // مدة الحركة
-      vsync: this,
-    )..repeat(reverse: true);
-
-    // 2. نحدد التوين (من 0 إلى 300)
-    _animation = Tween<Offset>(
-      begin: Offset(0, 15),
-      end: Offset(0, 0),
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.bounceInOut));
-
-    // _animationRotation = Tween<double>(begin: 0.5, end: 1);
-    _animationRotation = Tween<double>(begin: 0.5, end: 1).animate(_controller);
-    // 3. نبدأ الأنيميشن
-    // _controller.forward();
+    initSlidingAnimation();
   }
 
   @override
@@ -72,5 +57,22 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ),
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    _controller = AnimationController(
+      duration: Duration(seconds: 2), // مدة الحركة
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _animation = Tween<Offset>(
+      begin: Offset(0, 15),
+      end: Offset(0, 0),
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.bounceInOut));
+
+    // _animationRotation = Tween<double>(begin: 0.5, end: 1);
+    _animationRotation = Tween<double>(begin: 0.5, end: 1).animate(_controller);
+
+    // _controller.forward();
   }
 }
