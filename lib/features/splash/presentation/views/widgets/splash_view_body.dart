@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utilits/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -11,7 +12,6 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  // late Animation<Offset> _animation;
   late Animation<Offset> _animation;
   // late Tween<double> _animationRotation;
   late Animation<double> _animationRotation;
@@ -19,15 +19,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-
     initSlidingAnimation();
+    navigateToHome();
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -61,7 +61,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void initSlidingAnimation() {
     _controller = AnimationController(
-      duration: Duration(seconds: 2), // مدة الحركة
+      duration: Duration(seconds: 10), // مدة الحركة
       vsync: this,
     )..repeat(reverse: true);
 
@@ -74,5 +74,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _animationRotation = Tween<double>(begin: 0.5, end: 1).animate(_controller);
 
     // _controller.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(Duration(seconds: 1), () {
+      if (mounted) {
+        context.go("/home");
+      }
+    });
   }
 }
