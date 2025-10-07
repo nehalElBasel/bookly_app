@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utilits/styles.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/custom_appbar.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/home_news_books.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,13 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-        children: [CustomAppBar(), SizedBox(height: 15), HomeNewsBooks()],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomAppBar(),
+          SizedBox(height: 15),
+          HomeNewsBooks(),
+          Text("Best Seller", style: Styles.titleMeduim),
+        ],
       ),
     );
   }
