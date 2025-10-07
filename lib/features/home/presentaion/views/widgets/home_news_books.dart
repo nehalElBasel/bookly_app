@@ -8,15 +8,16 @@ class HomeNewsBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.35,
+      height: MediaQuery.of(context).size.height * 0.25,
+
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: dummyNewsBooks.length,
         itemBuilder: (context, index) {
-          // return Text("1 ");
           return ImageBox(image: dummyNewsBooks[index]);
         },
       ),
     );
+    ;
   }
 }

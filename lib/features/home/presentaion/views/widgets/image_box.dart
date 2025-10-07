@@ -8,10 +8,9 @@ class ImageBox extends StatelessWidget {
   Widget build(BuildContext context) {
     // return Image.asset(image);
     return AspectRatio(
-      aspectRatio: 3 / 4,
+      aspectRatio: 2.7 / 4,
       child: Container(
         decoration: BoxDecoration(
-          // color: Colors.red,
           image: DecorationImage(fit: BoxFit.fill, image: AssetImage(image)),
         ),
       ),
