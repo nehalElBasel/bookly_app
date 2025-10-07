@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(GoogleFonts.montserrat);
     return MaterialApp.router(
       routerConfig: router,
       theme: ThemeData(
         brightness: Brightness.dark,
-        fontFamily: GoogleFonts.montserrat.toString(),
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
     );
   }
