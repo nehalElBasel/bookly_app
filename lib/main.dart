@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(GoogleFonts.montserrat);
     return MaterialApp.router(
-      routerConfig: router,
+      routerConfig: AppRouting.router,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),

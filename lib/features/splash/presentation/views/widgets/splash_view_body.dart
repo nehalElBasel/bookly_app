@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/routing.dart';
 import 'package:bookly_app/core/utilits/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -79,7 +80,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void navigateToHome() {
     Future.delayed(Duration(seconds: 1), () {
       if (mounted) {
-        context.go("/home");
+        context.go(AppRouting.kHomeView);
       }
     });
   }
